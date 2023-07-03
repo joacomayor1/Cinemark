@@ -7,19 +7,18 @@ export default function MyNavbar({ handleContentChange }) {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="#home">Logo</Navbar.Brand>
+    <Navbar bg="transparent" variant="dark" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Button onClick={() => handleClick('movies')} variant="link" className='bar' href="#Movies">
-            Movies
+           |            Movies                  |     
           </Button>
           <Button onClick={() => handleClick('tv')} variant="link" className='bar' href="#tvPrograms">
-            TV Programs
+                     |            TV Programs            |
           </Button>
           <Button onClick={() => handleClick('popular')} variant="link" className='bar' href="#Populars">
-            Populars
+           |          Populars           |
           </Button>
         </Nav>
       </Navbar.Collapse>
