@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './App.css';
 import Card from './Components/card';
 import 'bootstrap/dist/css/bootstrap.css';
 import MyNavbar from './Components/navbar';
@@ -23,7 +24,7 @@ function App() {
     } else if (contentType === 'tv') {
       apiUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`;
     } else if (contentType === 'popular') {
-      apiUrl = `https://api.themoviedb.org/3/person/popular?api_key=${API_KEY}`;
+      apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
       setMovies([]); // clean the movies to show the most populars
     }
 
@@ -61,8 +62,9 @@ function App() {
             <img
               src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
               alt={selectedMovie.title}
-              style={{ maxWidth: '50%' }}
+              style={{ maxWidth: '20%'}}
             />
+            <div className='right'>
             <h2>{selectedMovie.title}</h2>
             <p>{selectedMovie.overview}</p>
             <button className="btn btn-primary" onClick={handlePlayClick}>
@@ -74,6 +76,7 @@ function App() {
             >
               Close
             </button>
+            </div>
           </div>
         </div>
       )}
