@@ -54,10 +54,6 @@ function App() {
         <h2>Billboard</h2>
       </div>
       <div className="container">
-<<<<<<< HEAD
-      
-
-=======
       <div className='showmovie'>
       {selectedMovie && (
         <div className="overlay">
@@ -82,7 +78,6 @@ function App() {
         </div>
       )}
       </div>
->>>>>>> show-movies-skeleton
         <MyNavbar handleContentChange={handleContentChange} />
         <div className="row">
           {movies.map((movie) => (
