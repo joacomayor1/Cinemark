@@ -54,8 +54,35 @@ function App() {
         <h2>Billboard</h2>
       </div>
       <div className="container">
+<<<<<<< HEAD
       
 
+=======
+      <div className='showmovie'>
+      {selectedMovie && (
+        <div className="overlay">
+          <div className="popup">
+            <img
+              src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
+              alt={selectedMovie.title}
+              style={{ maxWidth: '50%' }}
+            />
+            <h2>{selectedMovie.title}</h2>
+            <p>{selectedMovie.overview}</p>
+            <button className="btn btn-primary" onClick={handlePlayClick}>
+              PLAY
+            </button>
+            <button
+              onClick={() => setSelectedMovie(null)}
+              className="btn btn-secondary"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      </div>
+>>>>>>> show-movies-skeleton
         <MyNavbar handleContentChange={handleContentChange} />
         <div className="row">
           {movies.map((movie) => (
