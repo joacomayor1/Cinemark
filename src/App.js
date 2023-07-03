@@ -61,7 +61,7 @@ function App() {
             <img
               src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
               alt={selectedMovie.title}
-              style={{ maxWidth: '50%' }}
+              style={{ maxWidth: '30%' }}
             />
             <h2>{selectedMovie.title}</h2>
             <p>{selectedMovie.overview}</p>
