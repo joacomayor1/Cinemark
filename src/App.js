@@ -45,7 +45,7 @@ function App() {
   };
 
   const handlePlayClick = () => {
-    console.log('The usser click PLAY');
+    alert('Playing the movie');
   };
 
   return (
@@ -62,7 +62,7 @@ function App() {
             <img
               src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
               alt={selectedMovie.title}
-              style={{ maxWidth: '50%' }}
+              style={{ maxWidth: '30%' }}
             />
             <div className='right'>
             <h2>{selectedMovie.title}</h2>

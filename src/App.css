@@ -50,6 +50,13 @@ body{
   display: flexbox;
 }
 
+.mr-auto{
+  text-align: center;
+}
+
+#basic-navbar-nav{
+  text-align: center;
+}
 .popup{
   border-color: black;
   box-shadow:#282c34;
