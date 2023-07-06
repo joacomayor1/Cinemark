@@ -76,8 +76,9 @@ body{
   text-align: center;
   
 }
+
 .right {
-  text-align: left;
+  text-align: center;
   margin-left: 20px; /* Puedes ajustar el margen según tus necesidades */
 }
 
