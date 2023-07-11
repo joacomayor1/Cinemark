@@ -59,13 +59,7 @@ function App() {
       {selectedMovie && (
         <div className="overlay">
           <div className="popup">
-            <img
-              src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
-              alt={selectedMovie.title}
-              style={{ maxWidth: '30%' }}
-              className='imga'
-            />
-            <div className='right'>
+          <div className='right'>
             <h2>{selectedMovie.title}</h2>
             <p>{selectedMovie.overview}</p>
             <button className="btn btn-primary" onClick={handlePlayClick}>
@@ -73,11 +67,18 @@ function App() {
             </button>
             <button
               onClick={() => setSelectedMovie(null)}
-              className="btn btn-secondary"
+              className="btn btn-danger"
             >
               Close
             </button>
             </div>
+            <img
+              src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
+              alt={selectedMovie.title}
+              style={{ maxWidth: '30%', alignItems: 'center' }}
+              className='imga'
+            />
+           
           </div>
         </div>
       )}

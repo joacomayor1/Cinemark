@@ -99,6 +99,7 @@ body{
 
 .card-text{
   text-align: left;
+  color: white;
 }
 
 .card-body{
@@ -108,7 +109,12 @@ body{
   align-items: center;
 }
 
-.card-text{
+.center{
+  text-align: center;
+  align-items: center;
+}
+
+.card-title{
   color: white;
 }
 
