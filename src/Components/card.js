@@ -12,9 +12,7 @@ const Card = ({ image, h5, txt, setSelectedMovie, movie }) => {
         <div className="card-body">
           <h5 className="card-title">{h5}</h5>
           <p className="card-text">{txt}</p>
-          <button onClick={handlePlayClick} className="btn btn-primary">
-            PLAY
-          </button>
+          <button onClick={handlePlayClick} class="button-64">PLAY</button>
         </div>
       </div>
     </div>
