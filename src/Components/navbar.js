@@ -1,18 +1,27 @@
+import React from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 
-export default function MyNavbar() {
-    return (
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Button onClick="#" variant="link" href="#home">Movies</Button>
-            <a>             |           </a>
-            <Button onClick="#" variant="link" href="#features">TVPrograms</Button>
-            <Button onClick="#" variant="link" href="#pricing">Populars</Button>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
-};
+export default function MyNavbar({ handleContentChange }) {
+  const handleClick = (content) => {
+    handleContentChange(content);
+  };
+
+  return (
+    <Navbar bg="transparent" variant="dark" expand="lg">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Button onClick={() => handleClick('movies')} variant="link" className='bar' href="#Movies">
+           |            Movies                  |     
+          </Button>
+          <Button onClick={() => handleClick('tv')} variant="link" className='bar' href="#tvPrograms">
+                     |            TV Programs            |
+          </Button>
+          <Button onClick={() => handleClick('popular')} variant="link" className='bar' href="#Populars">
+           |          Populars           |
+          </Button>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+}
