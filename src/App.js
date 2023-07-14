@@ -49,56 +49,62 @@ function App() {
   };
 
   return (
-    <div>
-      <div className='titles'>
-        <h1>Cinemark Hoyts</h1>
-        <h2>Billboard</h2>
+    <div className='a'>
+      <div class="two">
+        <h1>
+          Cinemark Hoyts
+          <br></br>
+          <span>Billboard</span>
+        </h1>
       </div>
       <div className="container">
-      <div className='showmovie'>
-      {selectedMovie && (
-        <div className="overlay">
-          <div className="popup">
-          <div className='right'>
-            <h2>{selectedMovie.title}</h2>
-            <p>{selectedMovie.overview}</p>
-            <button className="btn btn-primary" onClick={handlePlayClick}>
-              PLAY
-            </button>
-            <button
-              onClick={() => setSelectedMovie(null)}
-              className="btn btn-danger"
-            >
-              Close
-            </button>
+        <div className="showmovie">
+          {selectedMovie && (
+            <div className="overlay">
+              <div className="popup">
+                <div className="right">
+                  <h2>{selectedMovie.title}</h2>
+                  <div className="movie-details">
+                    <p>{selectedMovie.overview}</p>
+                    <div className="movie-actions">
+                      <button
+                        className="btn btn-primary"
+                        onClick={handlePlayClick}
+                      >
+                        PLAY
+                      </button>
+                      <button
+                        onClick={() => setSelectedMovie(null)}
+                        className="btn btn-danger"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                  <img
+                    src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
+                    alt={selectedMovie.title}
+                    className="imga"
+                  />
+                </div>
+              </div>
             </div>
-            <img
-              src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
-              alt={selectedMovie.title}
-              style={{ maxWidth: '30%', alignItems: 'center' }}
-              className='imga'
-            />
-           
+          )}
+          <MyNavbar handleContentChange={handleContentChange} />
+          <div className="row">
+            {movies.map((movie) => (
+              <Card
+                key={movie.id}
+                image={`${IMAGE_PATH}${movie.poster_path}`}
+                h5={movie.title}
+                txt={movie.overview}
+                setSelectedMovie={setSelectedMovie}
+                movie={movie}
+              />
+            ))}
           </div>
         </div>
-      )}
       </div>
-        <MyNavbar handleContentChange={handleContentChange} />
-        <div className="row">
-          {movies.map((movie) => (
-            <Card
-              key={movie.id}
-              image={`${IMAGE_PATH}${movie.poster_path}`}
-              h5={movie.title}
-              txt={movie.overview}
-              setSelectedMovie={setSelectedMovie}
-              movie={movie}
-            />
-          ))}
-        </div>
-      </div>
-
-      
     </div>
   );
 }
