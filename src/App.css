@@ -197,15 +197,7 @@ body{
   color: rgba(255, 0, 0, 0.811);
   font-size: 55px;
 }
-.two h1:before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 60px;
-  height: 2px;
-  content: "";
-  background-color: #c50000;
-}
+
 
 .two h1 span {
   font-size: 13px;
