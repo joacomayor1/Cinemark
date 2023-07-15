@@ -120,11 +120,6 @@ body{
   align-items: center;
 }
 
-.center{
-  text-align: center;
-  align-items: center;
-}
-
 .card-title{
   color: white;
 }
@@ -219,4 +214,11 @@ body{
 
 .a{
   text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura según tus necesidades */
 }
