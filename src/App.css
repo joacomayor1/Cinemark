@@ -220,8 +220,19 @@ body {
 }
 
 .center {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ajusta la altura según tus necesidades */
+  grid-gap:5px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-gap: 5px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 2px;
 }
