@@ -25,7 +25,7 @@ function App() {
       apiUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`;
     } else if (contentType === 'popular') {
       apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
-      setMovies([]); // clean the movies to show the most populars
+      setMovies([]);
     }
 
     fetch(apiUrl)
