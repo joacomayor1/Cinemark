@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
+import "../App.css"
 
 export default function MyNavbar({ handleContentChange }) {
   const handleClick = (content) => {
@@ -7,17 +8,17 @@ export default function MyNavbar({ handleContentChange }) {
   };
 
   return (
-    <Navbar bg="transparent" variant="dark" expand="lg">
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+    <Navbar bg="black" variant="dark" expand="lg" className="nav-bar-center" style={{display:"flex",justifyContent:"center", borderRadius:"15px"}}>
+      {/* <Navbar.Toggle aria-controls="basic-navbar-nav nav-bar-center" />
+      <Navbar.Collapse id="basic-navbar-nav nav-bar-center"> */}
+        <Nav className="nav-bar-center">
           <Button
             onClick={() => handleClick("movies")}
             variant="link"
             className="bar"
             href="#Movies"
           >
-          Movies
+            Movies
           </Button>
           <Button
             onClick={() => handleClick("tv")}
@@ -25,7 +26,7 @@ export default function MyNavbar({ handleContentChange }) {
             className="bar"
             href="#tvPrograms"
           >
-          TV Programs{" "}
+            TV Programs{" "}
           </Button>
           <Button
             onClick={() => handleClick("popular")}
@@ -33,10 +34,10 @@ export default function MyNavbar({ handleContentChange }) {
             className="bar"
             href="#Populars"
           >
-          Populars
+            Populars
           </Button>
         </Nav>
-      </Navbar.Collapse>
+      {/* </Navbar.Collapse> */}
     </Navbar>
   );
 }

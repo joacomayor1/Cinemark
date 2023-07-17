@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../App.css"
 
 const Card = ({ image, h5, txt, setSelectedMovie, movie }) => {
   const [expanded, setExpanded] = useState(false);
