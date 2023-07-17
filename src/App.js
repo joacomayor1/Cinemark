@@ -63,8 +63,13 @@ function App() {
   };
 
   const handleGenreChange = (selectedGenre) => {
-    setMovies(movies.filter((movie) => movie.genre_ids.includes(selectedGenre)));
+    console.log(selectedGenre)
+    console.log(movies)
+    const filterResult = movies.filter((movie) => movie.genre_ids.includes(selectedGenre));
+    console.log(filterResult)
+    setMovies(filterResult)
   };
+  
 
   return (
     <div className='a'>
