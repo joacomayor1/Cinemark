@@ -9,6 +9,7 @@ const IMAGE_PATH = 'https://image.tmdb.org/t/p/original';
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [movies2, setMovies2] = useState([]);
   const [content, setContent] = useState('movies');
   const [selectedMovie, setSelectedMovie] = useState(null);
 
@@ -32,8 +33,10 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         if (contentType === 'popular') {
+          setMovies2(data.results);
           setMovies(data.results);
         } else {
+          setMovies2(data.results || []);
           setMovies(data.results || []);
         }
       })
@@ -43,6 +46,17 @@ function App() {
   const handleContentChange = (contentType) => {
     setContent(contentType);
   };
+
+const searchMovie = (content) => {
+  let copyMovies = movies2;
+  let newMovies = [];
+  copyMovies.forEach((item) => {
+    if (item.title.includes(content)) {
+      newMovies.push(item);
+    }
+  });
+setMovies(newMovies)
+};
 
   const handlePlayClick = () => {
     alert('Playing the movie');
@@ -90,7 +104,7 @@ function App() {
               </div>
             </div>
           )}
-          <MyNavbar handleContentChange={handleContentChange} />
+          <MyNavbar handleContentChange={handleContentChange} searchContent={searchMovie}/>
           <div className="row">
             {movies.map((movie) => (
               <Card
