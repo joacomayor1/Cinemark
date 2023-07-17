@@ -9,35 +9,35 @@ export default function MyNavbar({ handleContentChange }) {
 
   return (
     <Navbar bg="black" variant="dark" expand="lg" className="nav-bar-center" style={{display:"flex",justifyContent:"center", borderRadius:"15px"}}>
-      {/* <Navbar.Toggle aria-controls="basic-navbar-nav nav-bar-center" />
-      <Navbar.Collapse id="basic-navbar-nav nav-bar-center"> */}
         <Nav className="nav-bar-center">
           <Button
             onClick={() => handleClick("movies")}
             variant="link"
-            className="bar"
+            className="bar btn"
             href="#Movies"
+            style={{textDecoration:"none"}}
           >
             Movies
           </Button>
           <Button
             onClick={() => handleClick("tv")}
             variant="link"
-            className="bar"
+            className="bar btn"
             href="#tvPrograms"
+            style={{textDecoration:"none", }}
           >
             TV Programs{" "}
           </Button>
           <Button
             onClick={() => handleClick("popular")}
             variant="link"
-            className="bar"
+            className="bar btn"
             href="#Populars"
+            style={{textDecoration:"none"}}
           >
             Populars
           </Button>
         </Nav>
-      {/* </Navbar.Collapse> */}
     </Navbar>
   );
 }
