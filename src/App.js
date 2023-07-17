@@ -47,24 +47,28 @@ function App() {
     setContent(contentType);
   };
 
-const searchMovie = (content) => {
-  let copyMovies = movies2;
-  let newMovies = [];
-  copyMovies.forEach((item) => {
-    if (item.title.includes(content)) {
-      newMovies.push(item);
-    }
-  });
-setMovies(newMovies)
-};
+  const searchMovie = (content) => {
+    let copyMovies = movies2;
+    let newMovies = [];
+    copyMovies.forEach((item) => {
+      if (item.title.includes(content)) {
+        newMovies.push(item);
+      }
+    });
+    setMovies(newMovies);
+  };
 
   const handlePlayClick = () => {
     alert('Playing the movie');
   };
 
+  const handleGenreChange = (selectedGenre) => {
+    setMovies(movies.filter((movie) => movie.genre_ids.includes(selectedGenre)));
+  };
+
   return (
     <div className='a'>
-      <div class="two">
+      <div className="two">
         <h1>
           Cinemark Hoyts
           <br></br>
@@ -104,7 +108,11 @@ setMovies(newMovies)
               </div>
             </div>
           )}
-          <MyNavbar handleContentChange={handleContentChange} searchContent={searchMovie}/>
+          <MyNavbar
+            handleContentChange={handleContentChange}
+            searchContent={searchMovie}
+            handleGenreChange={handleGenreChange}
+          />
           <div className="row">
             {movies.map((movie) => (
               <Card
